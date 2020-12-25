@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cors());
 app.options('/:id', cors(corsOption));
 
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
 const movieSchema = Joi.object({
     title: Joi.array().required(),
