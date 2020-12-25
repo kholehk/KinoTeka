@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cors());
 app.options('/:id', cors(corsOption));
 
-const port = 3000;
+const PORT = process.env.PORT || 5000;
 
 const movieSchema = Joi.object({
     title: Joi.array().required(),
@@ -81,5 +81,5 @@ app.delete("/:id", async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`App listening on port: ${port}`)
 });
