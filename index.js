@@ -25,14 +25,14 @@ const movieSchema = Joi.object({
     dislike: Joi.string().required(),
 });
 
-app.get('/', async (req, res) => { 
-    try { 
-        const index = await loadFile('./index.html');
-        res.send('./index.html');
-    } catch (err) { 
-        res.sendStatus(404);
-    }
-});
+// app.get('/', async (req, res) => { 
+//     try { 
+//         const index = await loadFile('./index.html');
+//         res.send(index);
+//     } catch (err) { 
+//         res.sendStatus(404);
+//     }
+// });
 
 async function getMovies(req, res) { 
 
