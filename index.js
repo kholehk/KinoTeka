@@ -28,7 +28,7 @@ const movieSchema = Joi.object({
 app.get('/', async (req, res) => { 
     try { 
         const index = await loadFile('./index.html');
-        res.send(index);
+        res.send('./index.html');
     } catch (err) { 
         res.sendStatus(404);
     }
