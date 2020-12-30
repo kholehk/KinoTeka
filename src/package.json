@@ -1,7 +1,7 @@
 {
-  "name": "front_end_pro",
+  "name": "kino_teka",
   "version": "1.0.0",
-  "description": "ithillel.ua",
+  "description": "kinoteka.herokuapp.com",
   "main": "index.js",
   "dependencies": {
     "@popperjs/core": "^2.5.4",

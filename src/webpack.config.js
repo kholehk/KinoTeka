@@ -7,15 +7,15 @@ const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 module.exports = {
    mode: 'development',
-   entry: './src/index.js',
+   entry: './index.js',
    devtool: 'inline-source-map',
    output: {
       filename: 'main.[hash].js',
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, '../dist'),
    },
    devServer: {
       historyApiFallback: true,
-      contentBase: path.resolve(__dirname, './dist'),
+      contentBase: path.resolve(__dirname, '../dist'),
       open: true,
       compress: true,
       hot: true,
@@ -59,7 +59,7 @@ module.exports = {
    plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-         template: './src/index.html',
+         template: './index.html',
       }),
       new MiniCssExtractPlugin(),
       new webpack.HotModuleReplacementPlugin(),
