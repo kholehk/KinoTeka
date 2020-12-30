@@ -15,6 +15,8 @@ const corsOption = {
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use(express.static("dist"));
+
 app.options('/:id', cors(corsOption));
 
 const port = process.env.PORT || 5000;
@@ -23,6 +25,10 @@ const movieSchema = Joi.object({
     title: Joi.array().required(),
     like: Joi.string().required(),
     dislike: Joi.string().required(),
+});
+
+app.get("/", (req, res) => {
+    res.send("<h1>Hello World!</h1>")
 });
 
 async function getMovies(req, res) { 
