@@ -43,7 +43,6 @@ main {
   padding-right: 60px;
 }
 .card-title + .card-text {
-  height: 50vh;
   max-width: 50vh;
   overflow: hidden;
 }
