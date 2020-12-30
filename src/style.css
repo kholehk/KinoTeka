@@ -43,7 +43,7 @@ main {
   padding-right: 60px;
 }
 .card-title + .card-text {
-  max-width: 50vh;
+  max-height: 50vh;
   overflow: hidden;
 }
 .card-footer {
