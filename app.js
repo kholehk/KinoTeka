@@ -28,7 +28,7 @@ const movieSchema = Joi.object({
 });
 
 app.get("/", (req, res) => {
-    res.send("<h1>Hello World!</h1>")
+    res.send("<h1>Ласкаво просимо<br> на портал КіноТека!</h1>")
 });
 
 async function getMovies(req, res) { 

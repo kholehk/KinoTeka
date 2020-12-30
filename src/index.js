@@ -71,7 +71,7 @@ function main() {
    if (wrapper === null) return null;
 
    window.addEventListener("load", event => {
-      event.preventDefault();
+      //event.preventDefault();
       
       const url = new URL(event.target.URL);
 
