@@ -31,7 +31,9 @@ app.get("/", (req, res) => {
     res.send("<h1>Ласкаво просимо<br> на портал КіноТека!</h1>")
 });
 
-async function getMovies(req, res) { 
+async function getMovies(req, res) {
+    
+    console.log(req);
 
     const { id } = req.params;
     let movies = await loadFile(filePath);
