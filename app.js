@@ -44,7 +44,7 @@ async function getMovies(req, res) {
     res.sendStatus(404);
 };
 
-app.get('/', () => '<h1>< a href =\"https://kholehk.github.io/KinoTeka\">Kinoteka</a></h1>');
+app.get('/', (req, res) => res.send('<h1>< a href =\"https://kholehk.github.io/KinoTeka\">Kinoteka</a></h1>'));
 
 app.get('/movies', async (req, res) => await getMovies(req, res));
 
