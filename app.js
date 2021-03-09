@@ -27,12 +27,8 @@ const movieSchema = Joi.object({
     dislike: Joi.string().required(),
 });
 
-app.get("/", (req, res) => {
-    res.send("<h1>Ласкаво просимо<br> на портал КіноТека!</h1>")
-});
-
 async function getMovies(req, res) {
-    
+
     console.log(req);
 
     const { id } = req.params;
@@ -48,9 +44,9 @@ async function getMovies(req, res) {
     res.sendStatus(404);
 };
 
-app.get('/movies', async(req, res) => await getMovies(req, res));
+app.get('/movies', async (req, res) => await getMovies(req, res));
 
-app.get("/:id", async(req, res) => await getMovies(req, res));
+app.get("/:id", async (req, res) => await getMovies(req, res));
 
 app.post("/movies", async (req, res) => {
     // const { error } = movieSchema.validate(req.body);
@@ -68,7 +64,7 @@ app.post("/movies", async (req, res) => {
     res.sendStatus(201);
 });
 
-app.put("/:id", async (req,  res) => {
+app.put("/:id", async (req, res) => {
     const { id } = req.params;
 
     const movies = await loadFile(filePath);
