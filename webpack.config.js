@@ -6,11 +6,20 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 module.exports = {
-   mode: 'production',
-   entry: './index.js',
+   mode: 'development',
+   entry: './src/index.js',
+   devtool: 'inline-source-map',
    output: {
       filename: 'main.[hash].js',
-      path: path.resolve(__dirname, '../build'),
+      path: path.resolve(__dirname, './dist'),
+   },
+   devServer: {
+      historyApiFallback: true,
+      contentBase: path.resolve(__dirname, './dist'),
+      open: true,
+      compress: true,
+      hot: true,
+      port: 8080,
    },
    module: {
       rules: [
@@ -50,7 +59,7 @@ module.exports = {
    plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-         template: './index.html',
+         template: './src/index.html',
       }),
       new MiniCssExtractPlugin(),
       new webpack.HotModuleReplacementPlugin(),
